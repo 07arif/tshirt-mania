@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import About from './component/About/About';
+import Grandpa from './component/Grandpa.js/Grandpa';
 import Home from './component/Home/Home';
 import Orders from './component/Orders.js/Orders';
 import Main from './layout/Main';
@@ -13,6 +14,7 @@ function App() {
       children:[
         {
           path:'/',
+          loader:()=> fetch ('tshirts.json'),
           element:<Home></Home>
         },
         {
@@ -22,6 +24,11 @@ function App() {
         {
           path:'/about',
           element:<About></About>
+        },
+        {
+        path:'/grandpa',
+        element:<Grandpa></Grandpa>
+       
         }
       ]
     }
